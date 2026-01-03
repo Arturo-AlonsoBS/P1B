@@ -33,7 +33,7 @@ const pool = mysql.createPool({
 	database: DB_NAME,
 	waitForConnections: true,
 	connectionLimit: 10,
-	ssl: ca ? { ca, rejectUnauthorized: true } : 'REQUIRED'
+	ssl: ca ? { ca, rejectUnauthorized: true } : {}
 });
 
 pool.getConnection().then((conn) => {

@@ -28,7 +28,7 @@ const pool = promise_1.default.createPool({
     database: DB_NAME,
     waitForConnections: true,
     connectionLimit: 10,
-    ssl: ca ? { ca, rejectUnauthorized: true } : 'REQUIRED'
+    ssl: ca ? { ca, rejectUnauthorized: true } : {}
 });
 pool.getConnection().then((conn) => {
     console.log('Conexión a BD exitosa');
